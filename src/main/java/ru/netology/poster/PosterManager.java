@@ -4,7 +4,6 @@ public class PosterManager {
     private Film[] films = new Film[0];
 
     public void save(Film film) {
-
         int length = films.length + 1;
         Film[] tmp = new Film[length];
         System.arraycopy(films, 0, tmp, 0, films.length);
@@ -13,33 +12,49 @@ public class PosterManager {
         films = tmp;
     }
 
-    public void findAll() {
-        for (Film film : films) {
-            System.out.println(film.getFilm());
-        }
+    public Film[] findAll() {
+        return films;
     }
 
-    public void findLast(int limit) {
+    public Film[] findLast(int limit) {
+        Film[] lastFilms;
+        int copyToIndex = 0;
+
         if (limit < films.length) {
+            lastFilms = new Film[limit];
+
             for (int i = films.length - 1; i >= films.length - limit; i--) {
-                System.out.println(films[i].getFilm());
+                lastFilms[copyToIndex] = films[i];
+                copyToIndex++;
             }
         } else {
+            lastFilms = new Film[films.length];
             for (int i = films.length - 1; i >= 0; i--) {
-                System.out.println(films[i].getFilm());
+                lastFilms[copyToIndex] = films[i];
+                copyToIndex++;
             }
         }
+        return lastFilms;
     }
 
-    public void findLast() {
+    public Film[] findLast() {
+        Film[] lastFilms;
+        int copyToIndex = 0;
+
         if (films.length >= 10) {
+            lastFilms = new Film[10];
+
             for (int i = films.length - 1; i >= films.length - 10; i--) {
-                System.out.println(films[i].getFilm());
+                lastFilms[copyToIndex] = films[i];
+                copyToIndex++;
             }
         } else {
+            lastFilms = new Film[films.length];
             for (int i = films.length - 1; i >= 0; i--) {
-                System.out.println(films[i].getFilm());
+                lastFilms[copyToIndex] = films[i];
+                copyToIndex++;
             }
         }
+        return lastFilms;
     }
 }

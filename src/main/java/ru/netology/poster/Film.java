@@ -12,40 +12,35 @@ public class Film {
         this.genre = genre;
         this.isPremiere = isPremiere;
     }
-
-    public String getFilm() {
-        return "(" + id + ") " + name + " [" + genre + "] " + "Премьера: " + isPremiere;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId(int id) {
-        return id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public boolean isPremiere() {
-        return isPremiere;
-    }
-
-    public void setPremiere(boolean premiere) {
-        isPremiere = premiere;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public int getId(int id) {
+//        return id;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public String getGenre() {
+//        return genre;
+//    }
+//
+//    public void setGenre(String genre) {
+//        this.genre = genre;
+//    }
+//
+//    public boolean isPremiere() {
+//        return isPremiere;
+//    }
+//
+//    public void setPremiere(boolean premiere) {
+//        isPremiere = premiere;
+//    }
 }
