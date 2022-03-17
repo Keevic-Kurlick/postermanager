@@ -1,10 +1,10 @@
-package ru.netology.poster;
+package ru.netology.poster.domain;
 
 public class Film {
     private int id;
     private String name;
     private String genre;
-    boolean isPremiere;
+    private boolean isPremiere;
 
     public Film(int id, String name, String genre, boolean isPremiere) {
         this.id = id;

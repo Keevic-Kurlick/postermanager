@@ -1,6 +1,7 @@
-package ru.netology.poster;
+package ru.netology.poster.manager;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.poster.domain.Film;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -57,7 +58,7 @@ class PosterManagerTest {
 
     @Test
     public void shouldFindLastLimitLargerFilmsLength() {
-        PosterManager poster = new PosterManager();
+        PosterManager poster = new PosterManager(6);
 
         poster.save(first);
         poster.save(second);
@@ -66,14 +67,14 @@ class PosterManagerTest {
         poster.save(sixth);
 
         Film[] expected = {sixth, fifth, forth, second, first};
-        Film[] actual = poster.findLast(6);
+        Film[] actual = poster.findLast();
 
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldFindLastLimitEqualFilmsLength() {
-        PosterManager poster = new PosterManager();
+        PosterManager poster = new PosterManager(5);
 
         poster.save(first);
         poster.save(second);
@@ -82,14 +83,14 @@ class PosterManagerTest {
         poster.save(sixth);
 
         Film[] expected = {sixth, fifth, forth, second, first};
-        Film[] actual = poster.findLast(5);
+        Film[] actual = poster.findLast();
 
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldFindLastLimitLowerFilmsLength() {
-        PosterManager poster = new PosterManager();
+        PosterManager poster = new PosterManager(4);
 
         poster.save(first);
         poster.save(second);
@@ -98,7 +99,7 @@ class PosterManagerTest {
         poster.save(sixth);
 
         Film[] expected = {sixth, fifth, forth, second};
-        Film[] actual = poster.findLast(4);
+        Film[] actual = poster.findLast();
 
         assertArrayEquals(expected, actual);
     }
